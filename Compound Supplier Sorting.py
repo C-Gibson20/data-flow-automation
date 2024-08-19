@@ -44,12 +44,6 @@ def get_df_order(unordered_list, priority_items):
 
     return ordered_list
 
-
-### --- MAKE SURE YOU HAVE OPENED THE ENTIRE FOLDER IN VSCode --- ###
-### --- MAKE SURE INPUT FILE IS IN THE SAME FOLDER --- ###
-### --- CHANGE input_file TO INPUT FILE NAME --- ### 
-### --- MAKE SURE INPUT FILE IS NOT OPEN WHEN RUNNING --- ###
-
 input_file = 'Data.xlsx'
 supplier_df = pd.read_excel(input_file)
 priority_suppliers = ['MolPort', 'Enamine']
@@ -73,6 +67,5 @@ new_df['PREFERRED_SUPPLIER'] = pd.Categorical(new_df['PREFERRED_SUPPLIER'], cate
 new_df.sort_values(by = 'PREFERRED_SUPPLIER', inplace=True)
 new_df.head()
 
-### --- CHANGE output_file to OUTPUT FILE NAME --- ###
 output_file = 'Result.xlsx'
 new_df.to_excel(output_file, index=False)
